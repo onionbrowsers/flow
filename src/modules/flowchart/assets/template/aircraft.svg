@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>紫色飞机</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分组-20">
+            <circle id="椭圆形" fill="#A894F6" cx="8" cy="8" r="8"></circle>
+            <g id="分组" transform="translate(3.000000, 3.454545)" fill-rule="nonzero">
+                <path d="M9.63314157,0.254618721 L6.23036128,9.03412133 L4.19147352,7.49662494 L3.76963872,8.05802087 L2.95293338,6.71847874 L9.3906413,0.45026833 L9.39317289,0.447531727 L2.95823666,6.70809469 L0.147497511,4.66243734 L9.74643685,0.103840472 L9.65837374,0.189517255 L9.65833159,0.189626027 L9.74643685,0.103840472 L9.63314157,0.254618721 Z" id="合并形状" fill="#FFFFFF"></path>
+                <polyline id="路径" fill="#E0E4E9" points="9.74643685 0.103840472 3.41431886 6.91058362 3.79615512 8.03725278 9.74643685 0.103840472"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

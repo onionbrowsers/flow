@@ -1,0 +1,38 @@
+h1, h2, h3,h4, h5, h6, ul, li, img, a, p{
+  padding: 0;
+  margin: 0;
+}
+
+.clearfloat{
+  &::after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+$fc-primary-color: #fff;
+
+// 模板列表相关
+$tmp-list-width: 270px;
+$tmp-list-font-size: 12px;
+$tmp-list-color: #101010;
+$tmp-list-icon-color: #5A5A5A;
+$tmp-list-hover-border: #3F51B5;
+
+$sub-title-size: 14px;
+
+// 清楚浮动
+.clearfloat{
+  &::after{
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+// 超出省略号
+.text-ellipsis{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

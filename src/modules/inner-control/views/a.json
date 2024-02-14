@@ -1,0 +1,22 @@
+{
+    "flows": [
+        {
+            "type": "part",
+            "flowName": "环保板块",
+            "importantPart": [],
+            "judgeDepartment": ""
+        },
+        {
+            "type": "flow",
+            "flowName": "工程管理",
+            "importantPart": [
+                {"对应子图的一些属性": "对应属性的value值"}
+            ],
+            "judgeDepartment": {
+                "id": "评价人id",
+                "name": "评价人name",
+                "对应的一些属性": "对应属性的value值"
+            }
+        }
+    ]
+}

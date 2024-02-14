@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="40px" viewBox="0 0 150 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>logo白字</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="1.41259733%" y1="28.0561291%" x2="98.5874027%" y2="45.6643872%" id="linearGradient-1">
+            <stop stop-color="#66B0E0" offset="0%"></stop>
+            <stop stop-color="#1A8AE0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="4.879806%" y1="50%" x2="100%" y2="83.5245585%" id="linearGradient-2">
+            <stop stop-color="#F0756F" offset="0%"></stop>
+            <stop stop-color="#F0636F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分组-3-copy">
+            <text id="SmartFlow" font-family="PingFangSC-Medium, PingFang SC" font-size="18" font-weight="400" fill="#FFFFFF">
+                <tspan x="47" y="26"> SmartFlow </tspan>
+            </text>
+            <g id="分组-2" fill-rule="nonzero">
+                <g id="流程设置">
+                    <g id="分组">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="40" height="40"></rect>
+                        <path d="M28.004,30.76 L28,31 C28,32.388 28.314,33.702 28.876,34.876 L20,40 L11.124,34.876 C11.737092,33.5926094 12.0359913,32.1817503 11.996,30.76 L20,35.38 L28.004,30.76 L28.004,30.76 Z M33.32,22.784 L33.32,12.31 L26.402,8.316 C27.3659346,7.36834504 28.1041825,6.2158581 28.562,4.944 L37.324,10 L37.324,22.006 C35.9484759,21.955586 34.5798063,22.2224766 33.324,22.786 L33.32,22.784 Z M6.68,22.784 C5.42419365,22.2204766 4.05552415,21.953586 2.68,22.004 L2.68,10 L11.59,4.856 C12.038,6.146 12.77,7.302 13.714,8.248 L6.68,12.308 L6.68,22.784 L6.68,22.784 Z" id="形状" fill="url(#linearGradient-1)"></path>
+                    </g>
+                </g>
+                <g id="流程设置">
+                    <g id="分组">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="40" height="40"></rect>
+                        <path d="M20,8 C17.790861,8 16,6.209139 16,4 C16,1.790861 17.790861,4.05812251e-16 20,0 C22.209139,1.3527075e-16 24,1.790861 24,4 C24,6.209139 22.209139,8 20,8 Z M5.98,32.896 C3.770861,32.896 1.98,31.105139 1.98,28.896 C1.98,26.686861 3.770861,24.896 5.98,24.896 C8.189139,24.896 9.98,26.686861 9.98,28.896 C9.98,31.105139 8.189139,32.896 5.98,32.896 Z M33.98,32.896 C31.770861,32.896 29.98,31.105139 29.98,28.896 C29.98,26.686861 31.770861,24.896 33.98,24.896 C36.189139,24.896 37.98,26.686861 37.98,28.896 C37.98,31.105139 36.189139,32.896 33.98,32.896 Z M20.024,9.8 L28.684,14.8 L28.684,24.8 L20.024,29.8 L11.364,24.8 L11.364,14.8 L20.024,9.8 Z" id="形状" fill="url(#linearGradient-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

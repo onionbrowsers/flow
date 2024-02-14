@@ -1,0 +1,43 @@
+{
+  "name": "adambot-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "fix": "eslint src/**/*.vue --fix"
+  },
+  "dependencies": {
+    "@antv/g6": "^4.8.9",
+    "axios": "^0.18.1",
+    "docxtemplater": "^3.17.3",
+    "element-theme": "^2.0.1",
+    "element-ui": "^2.11.1",
+    "insert-css": "^2.0.0",
+    "jexcel": "^2.0.2",
+    "jquery": "^3.4.1",
+    "js-md5": "^0.7.3",
+    "lodash": "^4.17.15",
+    "moment": "^2.27.0",
+    "sortablejs": "^1.10.1",
+    "vue": "^2.5.22",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "element-theme-chalk": "^2.5.4",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "invariant": "^2.2.4",
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.0",
+    "vue-easytable": "^1.7.2",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
