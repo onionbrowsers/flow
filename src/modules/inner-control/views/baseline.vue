@@ -21,7 +21,7 @@
             </div>
             <div class="handle-button-wrapper">
                 <el-button @click="searchTable" type="primary">查询</el-button>
-                <el-button type="primary">新建</el-button>
+                <el-button @click="createFlow" type="primary">新建</el-button>
                 <el-button @click="resetForm">重置</el-button>
             </div>
         </div>
@@ -64,17 +64,26 @@
                 </el-pagination>
             </div>
         </div>
+        <Flow
+            v-if="isShowModal"
+            :visible="isShowModal"
+            @cancel="cancel"
+            @submit="submit"
+        />
     </div>
 </template>
 
 <script>
 import { fileTypeList } from '../constant/index'
 import { mapGetters } from 'vuex'
+import Flow from './flowModal.vue'
 import { ADownload } from '../util/index'
 
 export default {
+    components: { Flow },
     data () {
         return {
+            isShowModal: false,
             form: {
                 date: []
             },
@@ -118,11 +127,30 @@ export default {
                     return
                 }
                 this.tableData = data.items
+                // this.tableData = [
+                //   {
+                //     id: 1,
+                //     flow_name: '111',
+                //     draft_number: '123',
+                //     executor_name: 'test',
+                //     c_time: '-'
+                //   }
+                // ]
                 this.pager = data.page
             })
         },
         searchTable () {
             this.getTable()
+        },
+        createFlow () {
+            this.isShowModal = true
+        },
+        cancel () {
+            this.isShowModal = false
+        },
+        submit (params) {
+            console.log(params, 'params value')
+            this.isShowModal = false
         },
         resetForm () {
             this.$refs['form'].resetFields()

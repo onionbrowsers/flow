@@ -201,10 +201,20 @@ export default {
         },
         handleSubmit () {
             this.dialogVisible = false
-            console.log('create')
+            this.$router.push({
+              name: 'resultDetail',
+              query: {
+                id: 1
+              }
+            })
         },
         editTable (row) {
-            console.log(row, 'row')
+            this.$router.push({
+              name: 'resultDetail',
+              query: {
+                id: 1
+              }
+            })
         },
         beforeUpload (file) {
             console.log(file)

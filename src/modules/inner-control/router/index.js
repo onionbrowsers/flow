@@ -46,6 +46,12 @@ const routes = [
         component: () => import('@/modules/inner-control/views/result.vue')
       },
       {
+        path: 'resultDetail',
+        name: 'resultDetail',
+        beforeEnter: ifAuthenticated,
+        component: () => import('@/modules/inner-control/views/resultDetail.vue')
+      },
+      {
         path: 'create-plan',
         name: 'create-plan',
         beforeEnter: ifAuthenticated,

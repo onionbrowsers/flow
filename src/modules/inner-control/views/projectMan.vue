@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="project-man-wrapper">
     <el-tabs v-model="activeName" @tab-click="handleTabChange">
       <el-tab-pane v-for="(item) in projectManList" :key="item.value" :label="item.label" :name="item.value"></el-tab-pane>
     </el-tabs>
@@ -40,17 +40,8 @@
                 <th style="width: 100px">备注</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td style="width: 50px">1</td>
-                <td style="width: 200px">1</td>
-                <td style="width: 10px">1</td>
-                <td style="width: 150px">1</td>
-                <td style="width: 10px">1</td>
-                <td style="width: 10px">1</td>
-                <td style="width: 10px">1</td>
-              </tr>
-              <!-- <tr v-for="(item, index) in data.firstTable" :key="index">
+            <tbody v-if="data.firstTable && data.firstTable.data.length > 0">
+              <tr v-for="(item, index) in data.firstTable" :key="index">
                 <td>{{ item.controlId }}</td>
                 <td>{{ item.controlStand }}</td>
                 <td>{{ item.sampleSize }}</td>
@@ -58,7 +49,12 @@
                 <td>{{ item.actualSampleNum }}</td>
                 <td>{{ item.sampleId }}</td>
                 <td>{{ item.remark }}</td>
-              </tr> -->
+              </tr>
+            </tbody>
+            <tbody v-else>
+              <tr>
+                <td colspan="7">暂无数据</td>
+              </tr>
             </tbody>
           </td>
         </tr>
@@ -94,24 +90,20 @@
                 <th style="width: 150px">样本评价结论</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td style="width: 100px">1</td>
-                <td style="width: 80px">1</td>
-                <td style="width: 200px">1</td>
-                <td style="width: 70px">1</td>
-                <td style="width: 200px">1</td>
-                <td style="width: 150px">1</td>
+            <tbody v-if="data.finalTable.data.length > 0">
+              <tr v-for="(item, index) in data.finalTable.data" :key="index">
+                <td>{{ item.evalSampleId }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{ item.sampleName }}</td>
+                <td>{{ item.amountInvolved }}</td>
+                <td>{{ item.evalDesc }}</td>
+                <td>{{ item.evalConclusion }}</td>
               </tr>
-              <!-- <tr v-for="(item, index) in data.firstTable" :key="index">
-                <td>{{ item.controlId }}</td>
-                <td>{{ item.controlStand }}</td>
-                <td>{{ item.sampleSize }}</td>
-                <td>{{ item.sampleNum }}</td>
-                <td>{{ item.actualSampleNum }}</td>
-                <td>{{ item.sampleId }}</td>
-                <td>{{ item.remark }}</td>
-              </tr> -->
+            </tbody>
+            <tbody v-else>
+              <tr>
+                <td colspan="6">暂无数据</td>
+              </tr>
             </tbody>
           </td>
         </tr>
@@ -121,6 +113,12 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="btn-list">
+      <div type="primary" @click="handleBtnClick(btnType.save)" class="btn-item">保存</div>
+      <div type="primary" @click="handleBtnClick(btnType.draft)" class="btn-item">生成底稿</div>
+      <div type="primary" @click="handleBtnClick(btnType.summaryTable)" class="btn-item">生成底稿及汇总表</div>
+    </div>
   </div>
 </template>
 <script>
@@ -131,10 +129,17 @@ const project_enum = {
   settlement: '3' // 结算
 }
 
+const btn_type_enum = {
+  save: 1, // 保存
+  draft: 2, // 底稿
+  summaryTable: 3 // 汇总表
+}
+
 export default {
   data () {
     return {
       activeName: project_enum.purchase,
+      btnType: btn_type_enum,
       projectManList: [
         {
           value: project_enum.purchase,
@@ -157,6 +162,23 @@ export default {
     handleTabChange () {
 
     },
+
+    handleBtnClick (btnType) {
+      console.log(btnType, 'btnType')
+      switch (btnType) {
+        case btnType.save:
+          this.saveSingleDraft()
+          break
+        case btnType.draft:
+          this.generateDraftPaper()
+          break
+        case btnType.summaryTable:
+          this.generateSummaryTable()
+          break
+        default:
+          return null
+      }
+    },
      
     getLists () {
       const excel_id = this.$route.query.id
@@ -168,7 +190,52 @@ export default {
             this.$message.error('获取表格失败')
             return
         }
-        this.data = data
+        this.data = data || {}
+      })
+    },
+
+    saveSingleDraftPaper () {
+      const params = this.data
+      this.$api.saveSingleDraftPaper(params).then(res => {
+        const { code } = res
+        if (code !== 0) {
+            this.$message.error('保存失败')
+        } else {
+          this.$message.error('保存成功')
+          this.$router.push({
+              name: 'baseline'
+            })
+        }
+      })
+    },
+
+    generateDraftPaper () {
+      const params = this.data
+      this.$api.generateDraftPaper(params).then(res => {
+        const { code } = res
+        if (code !== 0) {
+            this.$message.error('保存失败')
+        } else {
+          this.$message.error('保存成功')
+          this.$router.push({
+              name: 'baseline'
+            })
+        }
+      })
+    },
+
+    generateSummaryTable () {
+      const params = this.data
+      this.$api.generateSummaryTable(params).then(res => {
+        const { code } = res
+        if (code !== 0) {
+            this.$message.error('保存失败')
+        } else {
+          this.$message.error('保存成功')
+          this.$router.push({
+              name: 'result'
+            })
+        }
       })
     }
   },
@@ -179,6 +246,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+
+.project-man-wrapper {
+  position: relative;
+}
 .draft-name {
   margin-bottom: 20px;
 }
@@ -215,6 +286,28 @@ export default {
 
   .first-table-thead {
     background: #ccc;
+  }
+}
+
+.btn-list {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+
+  .btn-item {
+    margin-bottom: 10px;
+    width: 115px;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #1890FF;
+    border-color: #1890FF;
   }
 }
 
